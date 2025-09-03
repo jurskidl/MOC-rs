@@ -4,7 +4,7 @@
 | Deterministic math: fixed thread scheduling, stable reductions (pairwise/Kahan) | ❌ |
 | Config + validation: JSON/YAML schema (positive Σt, χ sum=1, ranges) | ❌ |
 | Timers/logging: per-iteration Δk, L2(Δφ/φ), global balance, wall-time | ❌ |
-| Unit: Determinism — two identical runs yield |Δk |
+| Unit: Determinism — two identical runs yield Δk | ❌ |
 | Unit: Invalid config (negative Σt, malformed geometry) throws clearly | ❌ |
 
 **Phase 1 — 2D geometry and FSR tessellation**
