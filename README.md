@@ -5,7 +5,7 @@
 | Config + validation: JSON/YAML schema (positive Σt, χ sum=1, ranges) | ❌ |
 | Timers/logging: per-iteration Δk, L2(Δφ/φ), global balance, wall-time | ❌ |
 | Unit: Determinism — two identical runs yield |Δk |
-| Unit: Invalid config (negative Σt, malformed geometry) throws clearly |
+| Unit: Invalid config (negative Σt, malformed geometry) throws clearly | ❌ |
 
 **Phase 1 — 2D geometry and FSR tessellation**
 | Task | Status |
@@ -55,7 +55,7 @@
 | Source: Qi,g = (1/2π)[∑g’ Σs,g’→g φi,g’ + χg ∑g’ νΣf,g’ φi,g’] | ❌ |
 | Group sweeps with relaxation α; stop on residual thresholds | ❌ |
 | Tallies: absorption, in/out-scatter, leakage via boundary currents | ❌ |
-| Unit: Global balance — Prod − (Abs + Net leak) |
+| Unit: Global balance — Prod − (Abs + Net leak) | ❌ |
 | Unit: Fixed Q (no scatter/fission) converges in one sweep | ❌ |
 | Unit: Sensitivity — halve h, double M, changes ≤0.5% RMS | ❌ |
 
@@ -64,8 +64,8 @@
 | :-------------------------------:  | :----------------------------:  |
 | Fission source: Fg,i = χg ∑g’ νΣf,g’ φi,g’; normalize ∑Fg,i=1 | ❌ |
 | Power iteration with optional Wielandt shift; update keff | ❌ |
-| Convergence: |Δk |
-| Unit: Homogeneous reflected box — |keff−kinf |
+| Convergence: Δk | ❌ |
+| Unit: Homogeneous reflected box — keff−kinf | ❌ |
 | Unit: Spectral radius monotone; Wielandt stabilizes if needed | ❌ |
 
 **Phase 7 — Acceleration (pCMFD/CMFD)**
@@ -107,10 +107,10 @@
 | :-------------------------------:  | :----------------------------:  |
 | Thread-parallel sweeps with per-thread accumulators and stable reductions | ❌ |
 | Precompute per-segment Σt; optional fast exp approximation with guard | ❌ |
-| Unit: Reproducibility 1/2/8 threads — |Δk |
+| Unit: Reproducibility 1/2/8 threads — Δk | ❌ |
 | Unit: Strong scaling — 1→8 threads ≥4× speedup (medium case) | ❌ |
 | Unit: Sanitizers — address/UB sanitizers clean on test suite | ❌ |
-| Regression and acceptance gates (add to CI once Phases 4–8 exist) |
+| Regression and acceptance gates (add to CI once Phases 4–8 exist) | ❌ |
 
 | Task | Status |
 | :-------------------------------:  | :----------------------------:  |
